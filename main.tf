@@ -20,7 +20,3 @@ module "webservers" {
 
   tipo_instancia = "t2.micro"
 }
-
-module "apiservers" {
-  source = "./apiservers"
-}
