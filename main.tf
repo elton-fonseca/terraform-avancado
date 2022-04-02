@@ -20,3 +20,19 @@ module "webservers" {
 
   tipo_instancia = "t2.micro"
 }
+
+resource "aws_ebs_volume" "volume-website" {
+  availability_zone = "sa-east-1a"
+  size = 20
+
+  tags = {
+    Name = "Volume-website"
+  }
+}
+
+resource "aws_volume_attachment" "ligar-website-volume" {
+  device_name = "/dev/sdc"
+
+  volume_id = aws_ebs_volume.volume-website.id
+  instance_id = module.webservers.instancia_id
+}
