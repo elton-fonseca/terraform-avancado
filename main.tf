@@ -17,6 +17,8 @@ provider "aws" {
 
 module "webservers" {
   source = "./webservers"
+
+  tipo_instancia = "t2.micro"
 }
 
 module "apiservers" {
