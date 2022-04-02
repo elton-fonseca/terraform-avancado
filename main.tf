@@ -37,14 +37,18 @@ provider "aws" {
 #   instance_id = module.webservers.instancia_id
 # }
 
-module "s3_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-  version = "3.0.1"
+# module "s3_bucket" {
+#   source = "terraform-aws-modules/s3-bucket/aws"
+#   version = "3.0.1"
 
-  bucket = "treinaweb-terraform-bucket"
-  acl    = "private"
+#   bucket = "treinaweb-terraform-bucket"
+#   acl    = "private"
 
-  versioning = {
-    enabled = true
-  }
+#   versioning = {
+#     enabled = true
+#   }
+# }
+
+module "apiservers" {
+  source = "./apiservers"
 }

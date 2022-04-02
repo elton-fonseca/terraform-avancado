@@ -1,5 +1,5 @@
 resource "aws_instance" "api_server" {
-  ami           = "ami-0792f512117871b0b"
+  ami           = data.aws_ami.windows.id
   instance_type = var.tipo_instancia
 
   tags = {
@@ -7,11 +7,12 @@ resource "aws_instance" "api_server" {
   }
 }
 
-resource "aws_instance" "api_server1" {
-  ami           = "ami-0792f512117871b0b"
-  instance_type = var.tipo_instancia
+data "aws_ami" "windows" {
+  most_recent = true
+  owners = [ "amazon", "aws-marketplace", "self" ]
 
-  tags = {
-    Name = "ServidorSistemaAPI1"
+  filter {
+    name = "platform"
+    values = [ "windows" ]
   }
 }
