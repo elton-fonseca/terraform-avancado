@@ -16,7 +16,7 @@ provider "aws" {
 }
 
 module "webservers" {
-  source = "./webservers"
+  source = "github.com/treinaweb/terraform-module-webservers"
 
   tipo_instancia = "t2.micro"
 }
