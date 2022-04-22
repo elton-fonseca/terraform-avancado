@@ -21,6 +21,7 @@ variable "etiquetas" {
   type = map
   default = {
     Name = "ServidorSistemaAPI"
+    Projeto = "rh"
   }
 }
 

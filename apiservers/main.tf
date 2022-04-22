@@ -9,7 +9,7 @@ resource "aws_instance" "api_server1" {
   get_password_data = var.pegar_senha
 
   tags = {
-    Name = var.etiquetas["Name"]
+    for chave, valor in var.etiquetas : chave => upper(valor)
   }
 }
 
