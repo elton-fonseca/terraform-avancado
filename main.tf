@@ -51,6 +51,4 @@ provider "aws" {
 
 module "apiservers" {
   source = "./apiservers"
-
-  quantidade_cpus = var.entrada_quantidade_cpus
 }

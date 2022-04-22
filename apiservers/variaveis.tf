@@ -7,7 +7,7 @@ variable "tipo_instancia" {
 variable "quantidade_cpus" {
   description = "Define a quantidade CPUs de uma maquina"
   type = number
-  default = 1
+  default = 7
 }
 
 variable "plataformas" {
