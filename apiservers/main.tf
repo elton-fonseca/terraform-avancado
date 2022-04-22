@@ -1,9 +1,10 @@
 resource "aws_instance" "api_server" {
   ami           = data.aws_ami.windows.id
   instance_type = var.tipo_instancia
+  cpu_core_count = var.quantidade_cpus
 
   tags = {
-    Name = "ServidorSistemaAPI"
+    Name = var.etiquetas["Name"]
   }
 }
 
@@ -13,6 +14,6 @@ data "aws_ami" "windows" {
 
   filter {
     name = "platform"
-    values = [ "windows" ]
+    values = [ var.plataformas[0] ]
   }
 }
