@@ -23,3 +23,9 @@ variable "etiquetas" {
     Name = "ServidorSistemaAPI"
   }
 }
+
+variable "pegar_senha" {
+  description = "Define se pegará senha ou não"
+  type = bool
+  default = true
+}
