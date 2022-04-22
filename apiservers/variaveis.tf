@@ -29,3 +29,9 @@ variable "pegar_senha" {
   type = bool
   default = true
 }
+
+variable "is_nano" {
+  description = "define se o tipo de instancia é uma nano"
+  type = bool
+  default = false
+}
