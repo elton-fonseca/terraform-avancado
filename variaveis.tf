@@ -9,3 +9,8 @@ variable "id_ami" {
   type        = string
   default     = "ami-0792f512117871b0b"
 }
+
+variable "entrada_quantidade_cpus" {
+  type = number
+  default = 4
+}
