@@ -1,6 +1,6 @@
 resource "aws_instance" "api_server" {
   ami           = data.aws_ami.windows.id
-  instance_type = var.tipo_instancia
+  instance_type = "t2.${var.tipo_instancia}"
   cpu_core_count = var.quantidade_cpus
 
   tags = {
