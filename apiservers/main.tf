@@ -1,3 +1,7 @@
+terraform {
+  required_version = ">= 1.1.7"
+}
+
 locals {
   tipo_instancia = "t2.${var.tipo_instancia}"
 }
