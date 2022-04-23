@@ -7,10 +7,8 @@ locals {
 }
 
 resource "aws_instance" "api_server1" {
-  ami           = data.aws_ami.windows.id
+  ami           = "ami-0792f512117871b0b"
   instance_type = local.tipo_instancia != "" ? local.tipo_instancia : "t2.micro"
-  cpu_core_count = max(1, var.quantidade_cpus)
-  get_password_data = var.pegar_senha
 
   tags = {
     for chave, valor in var.etiquetas : chave => upper(valor)

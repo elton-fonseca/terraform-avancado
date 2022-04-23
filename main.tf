@@ -1,3 +1,13 @@
+terraform {
+  cloud {
+    organization = "treinaweb123"
+
+    workspaces {
+      name = "api-teste"
+    }
+  }
+}
+
 output "ola_mundo" {
   value = "Olá Treinaweb!"
 }
